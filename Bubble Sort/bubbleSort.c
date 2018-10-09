@@ -1,54 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
- 
-#define SIZE 10
  
 void swap(int *x,int *y);
-void buble_sort(int a[], const int n);
-void display(int a[],int size);
+void bubleSort(int a[],int n);
+void display(int a[],int n);
  
 void main()
 {
-    int a[SIZE] = {8,5,2,3,1,6,9,4,0,7};
-    int i;
- 
-    printf("The array before sorting is:\n");
-    display(a,SIZE);
- 
-    buble_sort(a,SIZE);
- 
-    printf("The array after sorting using bubble sorting algorithm:\n");
-    display(a,SIZE);
+	int a[100],n,i;
+	printf("Enter the size of array\n");
+	scanf("%d",&n);
+	printf("Enter the array elements\n");
+	for(i=0;i<n;i++)	
+		scanf("%d",&a[i]);
+ 	bubleSort(a,n);
+ 	printf("Sorted array is\n");
+    	display(a,n);
 }
  
 void swap(int *x,int *y)
 {
-    int temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
+    	int temp;
+    	temp=*x;
+    	*x=*y;
+    	*y=temp;
 }
  
-void buble_sort(int a[],const int size)
+void bubleSort(int a[],int n)
 {
-    int i,j;
-    for(i=0; i<(size-1); i++)
-    {
-        for(j=0; j<(size-(i+1)); j++)
-        {
-            {
-                if(a[j] > a[j+1])
-                    swap(&a[j],&a[j+1]);
-            }
+    	int i,j;
+   	for(i=0;i<n;i++)
+    	{
+        	for(j=0;j<n-i;j++)
+        	{
+                	if(a[j]>a[j+1])
+                    	swap(&a[j],&a[j+1]);
+            	}
  
         }
-    }
 }
-void display(int a[],const int size)
+
+void display(int a[],int n)
 {
-    int i;
-    for(i = 0; i < size; i++)
-        printf("%d ",a[i]);
- 
-    printf("\n");
+	int i;
+    	for(i=1;i<=n;i++)
+        	printf("%d\t",a[i]);
+     	printf("\n");
 }
