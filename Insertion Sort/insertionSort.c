@@ -1,43 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
- 
-#define SIZE 10
-void swap(int *a, int *b);
-void insertion_sort(int *a,const int size);
  
 int main()
 {
-    int a[SIZE] = {3, 4 , 6, 1, 5, 8, 7, 9, 0, 2};
- 
-    insertion_sort(a, SIZE);
- 
-    int i;
-    for(i = 0; i < SIZE; i++)
-    {
-        printf("%d ",a[i]);
-    }
-    return 0;
+	int n,i,a[100];
+	printf("Enter the array size\n");
+	scanf("%d",&n);
+	printf("Enter the array elements\n");
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	insertSort(a,n);	
+	printf("Sorted array is\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+	printf("\n");
+	return 0;
 }
- 
-void swap(int *a, int *b)
+
+int insertSort(int a[],int n)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-void insertion_sort(int *a,const int size)
-{
- 
-    int i,j, k;
-    for (i = 1; i < size; ++i)
-    {
-        k = a[i];
-        j = i - 1;
-        while ((j >= 0) && (k < a[j]))
-        {
-            a[j + 1] = a[j];
-            --j;
-        }
-        a[j + 1] = k;
-    }
+	int i,j,temp;
+	for(i=1;i<n;i++)
+	{
+		temp=a[i];
+		j=i-1;
+		while(temp<a[j] && j>=0)
+		{
+			a[j+1]=a[j];
+			j--;
+		}
+		a[j+1]=temp;
+	}
+	return 0;
 }
