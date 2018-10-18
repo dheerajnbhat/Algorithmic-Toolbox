@@ -11,7 +11,7 @@ int main()
 
 int gcd(int a,int b)
 {
-	int q,r;
+	int q,r;		/*quotient,remainder*/
 	while(b>0)
 	{
 		q=a/b;
