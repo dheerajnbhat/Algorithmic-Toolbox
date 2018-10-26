@@ -47,7 +47,7 @@ void mergeSort(int A[],int low,int high)
 	if(low<high) 
 	{ 
 	        mid=low+(high-low)/2; 
-	        mergeSort(A,low,mid); 
+	        mergeSort(A,low,mid);		/* Recursive function */
 	        mergeSort(A,mid+1,high);   
        	merge(A,low,mid,high); 
     	} 
