@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void swap(int *x,int *y);
-int pivot(int m,int n);
+int pivot(int m,int n);			/*pivot is the number which is choosen to sort the array*/
 void quicksort(int a[],int m,int n);
 void display(int a[],int n);
  
