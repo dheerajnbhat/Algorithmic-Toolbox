@@ -1,4 +1,4 @@
-print('Firts Enter elements and ')
+print('First Enter the elements in the sorted order and then')
 print('Enter number to be searched')
 list1=list(map(int ,input().split()))
 val=int(input())
